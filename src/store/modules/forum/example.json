@@ -1,0 +1,44 @@
+{
+    "doc":"数据存储示例",
+    "data": {
+        "active": "",
+        "chat": [
+            {
+                "uuid": "会话id",
+                "type": "room",
+                "data": [
+                    {
+                        "fromuser": {
+                            "id": "",
+                            "name": "",
+                            "time": "",
+                            "content": "",
+                            "atuser": "",
+                            "msgid": ""
+                        }
+                    },
+                    {
+                        "fromuser": {
+                            "id": "",
+                            "name": "",
+                            "time": "",
+                            "content": "",
+                            "msgid": ""
+                        },
+                        "touser": {
+                            "id": "",
+                            "name": ""
+                        }
+                    }
+                ]
+            }
+        ],
+        "history": [
+            {
+                "title": "",
+                "uuid": "",
+                "type": "room "
+            }
+        ]
+    }
+}

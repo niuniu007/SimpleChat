@@ -1,0 +1,1 @@
+declare module '@/components/nickname/random-name.js'
