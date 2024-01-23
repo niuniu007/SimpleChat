@@ -1,0 +1,40 @@
+/*
+发送   act  
+用户登录消息
+	{id:"",name:"",act:"sign",msg:"登录"}
+用户退出群组
+	{id:"",name:"",act:"quitroom",msg:"离开房间",room:"roomid"}
+用户加入到群组
+	{id:"",name:"",act:"joinroom",msg:"加入房间",room:"roomid"}
+用户发送消息
+	{id:"",name:"",act:"toall",msg:"登录@user1@user2",at:{aruser:[],isall:false},room:""}
+用户修改名称
+	{id:"",name:"",act:"chgname",msg:"改名",room:"roomid",newname:"",}
+用户撤回消息
+	{id:"",name:"",act:"msgrevoke",msg:"撤回消息",room:"roomid",msgid:""}
+用户私聊消息
+	{id:"",name:"",act:"privatechat",msg:"私聊消息",touser:"userid"}
+用户删除私聊
+	{id:"",name:"",act:"blkuser",msg:"拉黑用户",touser:"userid"}
+举报用户消息
+	{id:"",name:"",act:"report",msg:"举报用户消息",msgid:"0001"}
+*/
+
+/*
+下发房间列表
+{code:1,rooms:[{id,name}]}
+下发离线私聊消息合集
+{code:1,contents_list:[{id,name,content,time,toid,toname,msgid}]}
+下发用户加入房间的消息
+{code:1,id,name,room}
+下发用户改名的消息到房间
+{code:1,id,name,room}
+下发用户撤回消息
+{code:1,id,name,room,msgid}
+下发用户私聊消息
+{code:1,id,name,content,time,msgid,toid,toname}
+下发房间消息
+{code:1,id,name,content,time,msgid,room}
+下发用户离开房间的消息
+{code:1,id,name,time,room}
+*/

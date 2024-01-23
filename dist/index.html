@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-title" content="AI助手">
+	<link rel="icon" type="image/svg+xml" href="/chat/favicon.svg">
+	<link rel="apple-touch-icon" href="/chat/favicon.ico">
+	<link rel="icon" type="image/svg+xml" href="/chat/favicon.svg">
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<link rel="apple-touch-icon" href="/chat/favicon.ico">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
+	<title>社区</title>
+	<base href="/chat/">
+	<script>
+		(function (h, o, u, n, d) {
+			h = h[d] = h[d] || {
+				q: [],
+				onReady(c) {
+					h.q.push(c)
+				},
+			}
+			d = o.createElement(u)
+			d.async = 1
+			d.src = n
+			n = o.getElementsByTagName(u)[0]
+			n.parentNode.insertBefore(d, n)
+		})(
+			window,
+			document,
+			'script',
+			'https://static.guance.com/browser-sdk/v2/dataflux-rum.js',
+			'DATAFLUX_RUM',
+		)
+		DATAFLUX_RUM.onReady(() => {
+			DATAFLUX_RUM.init({
+				applicationId: 'cbjtest',
+				datakitOrigin: 'https://trace.apps.yqcloud.com', // 协议（包括：//），域名（或IP地址）[和端口号]
+				env: 'production',
+				version: '1.0.0',
+				trackInteractions: true,
+				traceType: 'ddtrace', // 非必填，默认为ddtrace，目前支持 ddtrace、zipkin、skywalking_v3、jaeger、zipkin_single_header、w3c_traceparent 6种类型
+				allowedTracingOrigins: ['*'], // 非必填，允许注入trace采集器所需header头部的所有请求列表。可以是请求的origin，也可以是是正则
+			})
+		})
+
+
+	</script>
+	<script>
+		var isFocus = true;//当前页是否活动
+		var tick_titletips = null;//标题闪烁
+		//标题闪烁提醒
+		function haveTitleTips(msg) {
+			if (!isFocus && !tick_titletips) {
+				haveSoundTips();
+				tick_titletips = setInterval(function () {
+					if (document.title.indexOf(msg) == -1) {
+						document.title = "[" + msg + "]-chat";
+					}
+					else {
+						document.title = "[　　　]-chat";
+					}
+					if (isFocus) {
+						clearInterval(tick_titletips);
+						tick_titletips = null;
+						document.title = "chat";
+					}
+				}, 500);
+			}
+			else if (!isFocus)
+				haveSoundTips();
+		}
+
+		//声音提醒
+		function haveSoundTips() {
+			var audioEle = document.getElementById("msg_sound");
+			audioEle.play();//播放
+		}
+
+		window.$forumTip = haveTitleTips;
+		window.onblur = function () { isFocus = false; }
+		window.onfocus = function () { isFocus = true; }
+	</script>
+	<style>
+		/* 添加滚动条样式 */
+		.scrollbar::-webkit-scrollbar {
+			width: 8px;
+			/* 设置滚动条宽度 */
+		}
+
+		/* 设置滚动条轨道背景颜色 */
+		/*	.scrollbar::-webkit-scrollbar-track {
+			background-color: #fff;
+			
+		} */
+
+		.scrollbar::-webkit-scrollbar-thumb {
+			background-color: #888;
+			/* 设置滚动条滑块颜色 */
+			border-radius: 4px;
+			/* 设置滚动条滑块圆角 */
+		}
+
+		.scrollbar::-webkit-scrollbar-thumb:hover {
+			background-color: #555;
+			/* 设置滚动条滑块悬停颜色 */
+		}
+	</style>
+  <script type="module" crossorigin src="/chat/assets/index-6d5b5c0d.js"></script>
+<link rel="manifest" href="/chat/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/chat/registerSW.js"></script></head>
+
+<body class="dark:bg-black">
+	<audio id="msg_sound" src="./tip.mp3"></audio>
+	<div id="app">
+		<style>
+			.loading-wrap {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+
+			.balls {
+				width: 4em;
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			.balls div {
+				width: 0.8em;
+				height: 0.8em;
+				border-radius: 50%;
+				background-color: #4b9e5f;
+			}
+
+			.balls div:nth-of-type(1) {
+				transform: translateX(-100%);
+				animation: left-swing 0.5s ease-in alternate infinite;
+			}
+
+			.balls div:nth-of-type(3) {
+				transform: translateX(-95%);
+				animation: right-swing 0.5s ease-out alternate infinite;
+			}
+
+			@keyframes left-swing {
+
+				50%,
+				100% {
+					transform: translateX(95%);
+				}
+			}
+
+			@keyframes right-swing {
+				50% {
+					transform: translateX(-95%);
+				}
+
+				100% {
+					transform: translateX(100%);
+				}
+			}
+
+			@media (prefers-color-scheme: dark) {
+				body {
+					background: #121212;
+				}
+			}
+		</style>
+		<div class="loading-wrap">
+			<div class="balls">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	
+
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>module.chat</Name>
+    <RootNamespace>module.chat</RootNamespace>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>abcbc8d3-7bcc-4b9e-a8df-e796e03d2459</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>node_modules\@vue\cli-service\bin\vue-cli-service.js</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+    <ScriptArguments>serve</ScriptArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+      npm run build
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="config\" />
+    <Folder Include="src\api\" />
+    <Folder Include="src\components\common\" />
+    <Folder Include="src\components\common\HoverButton\" />
+    <Folder Include="src\components\common\NaiveProvider\" />
+    <Folder Include="src\components\common\PromptStore\" />
+    <Folder Include="src\components\common\Setting\" />
+    <Folder Include="src\components\common\SvgIcon\" />
+    <Folder Include="src\components\common\UserAvatar\" />
+    <Folder Include="src\locales\" />
+    <Folder Include="typeings\" />
+    <Folder Include="public\" />
+    <Folder Include="src\" />
+    <Folder Include="src\assets\" />
+    <Folder Include="src\components\" />
+    <Folder Include="src\hooks\" />
+    <Folder Include="src\views\" />
+    <Folder Include="src\store\" />
+    <Folder Include="src\router\" />
+    <Folder Include="src\store\modules\" />
+    <Folder Include="src\store\modules\app\" />
+    <Folder Include="src\store\modules\auth\" />
+    <Folder Include="src\store\modules\chat\" />
+    <Folder Include="src\store\modules\prompt\" />
+    <Folder Include="src\store\modules\user\" />
+    <Folder Include="src\utils\" />
+    <Folder Include="src\utils\crypto\" />
+    <Folder Include="src\utils\format\" />
+    <Folder Include="src\utils\functions\" />
+    <Folder Include="src\utils\is\" />
+    <Folder Include="src\utils\request\" />
+    <Folder Include="src\utils\storage\" />
+    <Folder Include="src\views\chat\" />
+    <Folder Include="src\views\chat\layout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="babel.config.js" />
+    <Content Include="package.json" />
+    <Content Include="public\favicon.ico" />
+    <Content Include="index.html" />
+    <Content Include="src\App.vue" />
+    <Content Include="src\assets\avatar.jpg" />
+    <Content Include="src\assets\logo.png" />
+    <Content Include="src\assets\recommend.json" />
+    <Content Include="src\components\common\HoverButton\Button.vue" />
+    <Content Include="src\components\common\HoverButton\index.vue" />
+    <Content Include="src\components\common\NaiveProvider\index.vue" />
+    <Content Include="src\components\common\PromptStore\index.vue" />
+    <Content Include="src\components\common\Setting\About.vue" />
+    <Content Include="src\components\common\Setting\General.vue" />
+    <Content Include="src\components\common\Setting\index.vue" />
+    <Content Include="src\components\common\SvgIcon\index.vue" />
+    <Content Include="src\components\common\UserAvatar\index.vue" />
+    <Content Include="src\components\HelloWorld.vue" />
+    <Content Include="src\main.ts" />
+    <Content Include="src\views\chat\index.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\views\chat\layout\Layout.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="tsconfig.json">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="config\index.ts" />
+    <TypeScriptCompile Include="config\proxy.ts" />
+    <TypeScriptCompile Include="src\api\index.ts" />
+    <TypeScriptCompile Include="src\components\common\index.ts" />
+    <TypeScriptCompile Include="src\hooks\useBasicLayout.ts" />
+    <TypeScriptCompile Include="src\hooks\useIconRender.ts" />
+    <TypeScriptCompile Include="src\hooks\useLanguage.ts" />
+    <TypeScriptCompile Include="src\hooks\useTheme.ts" />
+    <TypeScriptCompile Include="src\locales\en-US.ts" />
+    <TypeScriptCompile Include="src\locales\index.ts" />
+    <TypeScriptCompile Include="src\locales\zh-CN.ts" />
+    <TypeScriptCompile Include="src\locales\zh-TW.ts" />
+    <TypeScriptCompile Include="src\router\index.ts" />
+    <TypeScriptCompile Include="src\router\permission.ts" />
+    <TypeScriptCompile Include="src\store\index.ts" />
+    <TypeScriptCompile Include="src\store\modules\app\helper.ts" />
+    <TypeScriptCompile Include="src\store\modules\app\index.ts" />
+    <TypeScriptCompile Include="src\store\modules\auth\helper.ts" />
+    <TypeScriptCompile Include="src\store\modules\auth\index.ts" />
+    <TypeScriptCompile Include="src\store\modules\chat\helper.ts" />
+    <TypeScriptCompile Include="src\store\modules\chat\index.ts" />
+    <TypeScriptCompile Include="src\store\modules\index.ts" />
+    <TypeScriptCompile Include="src\store\modules\prompt\helper.ts" />
+    <TypeScriptCompile Include="src\store\modules\prompt\index.ts" />
+    <TypeScriptCompile Include="src\store\modules\user\helper.ts" />
+    <TypeScriptCompile Include="src\store\modules\user\index.ts" />
+    <TypeScriptCompile Include="src\utils\crypto\index.ts" />
+    <TypeScriptCompile Include="src\utils\format\index.ts" />
+    <TypeScriptCompile Include="src\utils\functions\index.ts" />
+    <TypeScriptCompile Include="src\utils\is\index.ts" />
+    <TypeScriptCompile Include="src\utils\request\axios.ts" />
+    <TypeScriptCompile Include="src\utils\request\index.ts" />
+    <TypeScriptCompile Include="src\utils\storage\index.ts" />
+    <TypeScriptCompile Include="src\utils\storage\local.ts" />
+    <TypeScriptCompile Include="src\views\chat\layout\index.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="typeings\chat.d.ts" />
+    <TypeScriptCompile Include="typeings\env.d.ts" />
+    <TypeScriptCompile Include="typeings\global.d.ts" />
+    <TypeScriptCompile Include="typeings\vue.d.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="vite.config.ts" />
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
