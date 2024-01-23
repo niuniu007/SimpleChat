@@ -1,0 +1,2 @@
+# SimpleChat
+基于vue3和websocket开发的简单的聊天系统，仿照PC微信聊天界面
