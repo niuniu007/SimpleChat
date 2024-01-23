@@ -11,6 +11,10 @@
 - 发送emoji表情
 - 好友列表
 
+## DEMO
+
+[https://blog.nnwk.net/chat/index.html](https://blog.nnwk.net/chat/index.html)
+
 ## 广告
 
 - 我的站点：[https://blog.nnwk.net](https://blog.nnwk.net)
