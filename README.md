@@ -17,4 +17,8 @@
 - 我的站点：[https://blog.nnwk.net](https://blog.nnwk.net)
 
 ## 图例
-![](./doc/images/1.jpg)
+![](./doc/images/1.png)
+![](./doc/images/2.png)
+![](./doc/images/3.png)
+![](./doc/images/4.png)
+![](./doc/images/5.png)
