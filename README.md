@@ -14,7 +14,7 @@
   
 ## 广告
 
-- 我的站点：[https://blog.nnwk.net](https://blog.nnwk.net)
+- 我的站点：[https://blog.nnwk.net](https://blog.nnwk.net){target="_blank"}
 
 ## 图例
 ![](./doc/images/1.png)
